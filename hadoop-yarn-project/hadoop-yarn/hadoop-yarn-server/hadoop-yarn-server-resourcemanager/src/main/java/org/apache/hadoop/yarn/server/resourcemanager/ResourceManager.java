@@ -212,7 +212,6 @@ public class ResourceManager extends CompositeService implements Recoverable {
   }
 
   public static long getClusterTimeStamp() {
-    int t = Long.hashCode(1L);
     return clusterTimeStamp;
   }
 
