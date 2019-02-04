@@ -82,6 +82,15 @@ RUN apt-get -q update \
     && rm -rf /var/lib/apt/lists/*
 
 #######
+# OpenJDK 8
+#######
+# hadolint ignore=DL3008
+RUN apt-get -q update \
+    && apt-get -q install -y --no-install-recommends openjdk-8-jdk libbcprov-java \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+#######
 # OpenJDK 7
 #######
 # hadolint ignore=DL3008
@@ -91,15 +100,6 @@ RUN apt-get -q update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 RUN update-java-alternatives --set java-1.7.0-openjdk-amd64
-
-#######
-# OpenJDK 8
-#######
-# hadolint ignore=DL3008
-RUN apt-get -q update \
-    && apt-get -q install -y --no-install-recommends openjdk-8-jdk libbcprov-java \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
 
 ######
 # Install cmake 3.1.0 (3.5.1 ships with Xenial)
