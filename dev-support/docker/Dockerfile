@@ -86,7 +86,7 @@ RUN apt-get -q update \
 #######
 # hadolint ignore=DL3008
 RUN apt-get -q update \
-    && apt-get -q install -y --no-install-recommends openjdk-8-jdk libbcprov-java \
+    && apt-get -q install -y --no-install-recommends openjdk-8-jdk \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
